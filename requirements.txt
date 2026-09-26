@@ -1,0 +1,8 @@
+streamlit>=1.32
+pandas
+numpy
+scikit-learn
+nltk
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+sentence-transformers
