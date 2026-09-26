@@ -21,7 +21,7 @@ SAMPLE_SIZE = int(os.environ.get("MEDBOT_SAMPLE_SIZE", "3000"))
 
 # Set MEDBOT_USE_SBERT=0 to force lightweight TF-IDF-only mode (no SBERT/torch
 # download at all) — useful if the host runs out of memory loading SBERT.
-USE_SBERT_REQUESTED = os.environ.get("MEDBOT_USE_SBERT", "1") != "0"
+USE_SBERT_REQUESTED = "0"
 
 CSV_CANDIDATES = [
     "medquad.csv",
@@ -221,7 +221,7 @@ class MedicalChatbotEngineV3:
         self.conversation_history.append(user_input)
 
         return (
-            f"**Kategori:** {row['category']}  ·  _{method}_\n\n"
+            f"**Kategori:** {row['category']}\n\n"
             f"{row['answer']}\n\n"
             f"---\n⚠️ Info edukasi, bukan pengganti diagnosis dokter."
         )
