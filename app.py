@@ -239,7 +239,7 @@ bot = build_bot(df)
 # ---------------------------------------------------------------------------
 st.title("🏥 MedBot — Medical Q&A Chatbot")
 st.caption(
-    f"Dataset: MedQuAD · {len(df)} pasangan Q&A · {df['category'].nunique()} kategori"
+    f"Dataset: MedQuAD {len(df)} pasangan Q&A {df['category'].nunique()} kategori"
 )
 st.info(
     "⚠️ Chatbot ini untuk edukasi saja dan bukan pengganti konsultasi dengan dokter. "
