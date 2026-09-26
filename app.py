@@ -203,7 +203,7 @@ class MedicalChatbotEngineV3:
 
         query = self._build_context_query(user_input)
         results = self._search_sbert(query) if USE_SBERT else self._search_tfidf(query)
-        method = "SBERT" if USE_SBERT else "TF-IDF"
+        method = "TF-IDF"
 
         best_idx, best_score = results[0]
         if best_score < self.threshold:
@@ -240,7 +240,6 @@ bot = build_bot(df)
 st.title("🏥 MedBot — Medical Q&A Chatbot")
 st.caption(
     f"Dataset: MedQuAD · {len(df)} pasangan Q&A · {df['category'].nunique()} kategori · "
-    f"Engine: {'SBERT' if USE_SBERT else 'TF-IDF'}"
 )
 st.info(
     "⚠️ Chatbot ini untuk edukasi saja dan bukan pengganti konsultasi dengan dokter. "
