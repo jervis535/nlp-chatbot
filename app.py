@@ -221,7 +221,7 @@ class MedicalChatbotEngineV3:
         self.conversation_history.append(user_input)
 
         return (
-            f"**Kategori:** {row['category']}\n\n"
+            f"**Kategori** {row['category']}\n\n"
             f"{row['answer']}\n\n"
             f"---\n⚠️ Info edukasi, bukan pengganti diagnosis dokter."
         )
