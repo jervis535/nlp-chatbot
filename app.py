@@ -133,9 +133,9 @@ df = load_dataset(SAMPLE_SIZE)
 # Chatbot engine (same logic as MedicalChatbotEngineV3 in the notebook)
 # ---------------------------------------------------------------------------
 class MedicalChatbotEngineV3:
-    def __init__(self, dataframe, threshold=0.5, top_k=3):
+    def __init__(self, dataframe, threshold=0.75, top_k=3):
         self.df = dataframe
-        self.threshold = threshold if USE_SBERT else 0.5
+        self.threshold = threshold if USE_SBERT else 0.75
         self.top_k = top_k
         self.conversation_history = []
         self._build_index()
@@ -239,7 +239,7 @@ bot = build_bot(df)
 # ---------------------------------------------------------------------------
 st.title("🏥 MedBot — Medical Q&A Chatbot")
 st.caption(
-    f"Dataset: MedQuAD · {len(df)} pasangan Q&A · {df['category'].nunique()} kategori · "
+    f"Dataset: MedQuAD · {len(df)} pasangan Q&A · {df['category'].nunique()} kategori"
 )
 st.info(
     "⚠️ Chatbot ini untuk edukasi saja dan bukan pengganti konsultasi dengan dokter. "
