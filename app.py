@@ -135,7 +135,7 @@ df = load_dataset(SAMPLE_SIZE)
 class MedicalChatbotEngineV3:
     def __init__(self, dataframe, threshold=0.5, top_k=3):
         self.df = dataframe
-        self.threshold = threshold if USE_SBERT else 0.15
+        self.threshold = threshold if USE_SBERT else 0.5
         self.top_k = top_k
         self.conversation_history = []
         self._build_index()
